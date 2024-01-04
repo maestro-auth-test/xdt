@@ -7,6 +7,7 @@
     "allowPrerelease": true
   },
   "msbuild-sdks": {
-    "Microsoft.DotNet.Arcade.Sdk": "9.0.0-beta.23628.1"
+    "Microsoft.DotNet.Arcade.Sdk": "9.0.0-beta.23628.1",
+    "Microsoft.Build.Traversal": "4.1.0"
   }
 }

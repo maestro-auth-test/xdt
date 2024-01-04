@@ -1,0 +1,15 @@
+<Project>
+
+  <Import Sdk="Microsoft.Build.Traversal" Project="Sdk.targets" />
+
+  <!-- Overwrite Traversal Sdk.targetse target to skip projects without even kicking-off evaluations. -->
+  <Target Name="GetProjectsToSkip">
+    <ItemGroup Condition="'$(Test)' == 'false'">
+      <ProjectToSkip Include="@(ProjectReference)"
+                     Message=""
+                     Condition="$([System.String]::new('%(ProjectReference.Identity)').EndsWith('.Tests.csproj'))"
+                     OriginalItemSpec="%(Identity)" />
+    </ItemGroup>
+  </Target>
+
+</Project>
